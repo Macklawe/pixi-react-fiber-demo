@@ -6,21 +6,15 @@ import * as serviceWorker from './serviceWorker';
 import * as PIXI from 'pixi.js';
 import 'pixi-tiledmap';
 
-window.fs = {
-    readFile: () => {
-        console.log('caught');
-    }
-}
 
-const renderer = PIXI.autoDetectRenderer(442, 286);
-document.body.appendChild(renderer.view);
+PIXI.settings.SCALE_MODE = PIXI.SCALE_MODES.NEAREST;
 
 PIXI.loader
     .add('/map/taiga.tmx')
     .load(() => {
-        const tileMap = new PIXI.extras.TiledMap('/map/taiga.tmx');
 
-        renderer.render(tileMap);
+        ReactDOM.render(<App />, document.querySelector('#root'));
+
     });
 
 // If you want your app to work offline and load faster, you can change
