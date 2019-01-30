@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Stage } from "react-pixi-fiber";
-import TaigaMap from './TaigaMap';
-import './App.css';
+import SpaceRoom from './rooms/SpaceRoom';
+import {color} from '../utils/color';
 
-const height = window.innerHeight;
-const width = window.innerWidth;
+const height = 500;
+const width = 500;
 const OPTIONS = {
-    backgroundColor: 0x1099bb
+    backgroundColor: color('#250b23')
 };
 
 class App extends Component {
@@ -14,7 +14,7 @@ class App extends Component {
     render() {
         return (
             <Stage options={OPTIONS} width={width} height={height}>
-                <TaigaMap/>
+                <SpaceRoom/>
             </Stage>
         );
     }
